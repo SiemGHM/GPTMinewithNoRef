@@ -8,6 +8,6 @@ To test, pytorch environment is required with the modules to install at requirem
 
 To start training, use the code
 
-> > > python train.py
+> python train.py
 
 To make changes to the config, edit the lines in train.py, from line 39 to line 45.
