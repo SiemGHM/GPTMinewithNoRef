@@ -61,6 +61,8 @@ for i in range(NUM_EPOCHS):
         loss = F.cross_entropy(logits.view(-1, vocab_size), y.view(-1))
         optimizer.zero_grad()
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+
         optimizer.step()
         if ind % 10 == 0:
             print(f"step {ind}, loss: {loss.item():.4f}")
